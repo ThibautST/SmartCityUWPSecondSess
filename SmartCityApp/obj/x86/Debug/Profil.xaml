@@ -1,0 +1,156 @@
+﻿<Page
+    x:Class="SmartCityApp.Profil"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SmartCityApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{Binding Source={StaticResource Locator}, Path=Profil}"
+    mc:Ignorable="d">
+
+    <Grid Background="SkyBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Grid  Grid.Row="0" Height="Auto"  Background="DarkSlateGray">
+            <Button Content="&#xE72B;" Margin="20" Background="DarkSlateGray" Foreground="SkyBlue" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontSize="30" FontWeight="ExtraBold" Command="{Binding BackToMenu}"/>
+            <TextBlock Text="Profil" Foreground="SkyBlue" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Background="SkyBlue"  BorderBrush="DarkSlateGray" BorderThickness="0,1,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="ms-appx:/Images/profil.png" Width="75" Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="{Binding CurrentUser.Login}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" FontSize="20" FontWeight="Bold" Foreground="DarkSlateGray"/>
+                <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" FontSize="18"  Foreground="DarkSlateGray" >
+                    <Run Text="{Binding CurrentUser.Name}"/>
+                    <Run Text="{Binding CurrentUser.FirstName}"/>
+                </TextBlock>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2" Background="DarkSlateGray" BorderBrush="DarkSlateGray" BorderThickness="0,0,0,2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="General Information :" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,5,0,2.667" FontSize="14"  Foreground="SkyBlue" Height="18"/>
+
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1">
+                    <TextBlock Text="Address :"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="05,5,0,2.667" FontSize="12"  Foreground="DarkSlateGray" Height="18"/>
+                </Grid>
+                <Grid Grid.Row="2" Background="PowderBlue" BorderBrush="#3DBAF9" BorderThickness="1,1,1,1" CornerRadius="8,8,8,8">
+
+                    <TextBlock Text="{Binding CurrentUser.Address}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,5,0,2.667" FontSize="16"  Foreground="DarkSlateGray"/>
+                </Grid>
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1">
+                    <TextBlock Text="BirthDate :"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="05,5,0,2.667" FontSize="12"  Foreground="DarkSlateGray" Height="18"/>
+                </Grid>
+                <Grid Grid.Row="2" Background="PowderBlue" BorderBrush="#3DBAF9" BorderThickness="1,1,1,1" CornerRadius="8,8,8,8">
+
+                    <TextBlock Text="{Binding CurrentUser.BirthDate}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,5,0,2.667" FontSize="16"  Foreground="DarkSlateGray"/>
+                </Grid>
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1">
+                    <TextBlock Text="PhoneNumber :"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="05,5,0,2.667" FontSize="12"  Foreground="DarkSlateGray" Height="18"/>
+                </Grid>
+                <Grid Grid.Row="2" Background="PowderBlue" BorderBrush="#3DBAF9" BorderThickness="1,1,1,1" CornerRadius="8,8,8,8">
+
+                    <TextBlock Text="{Binding CurrentUser.PhoneNumber}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,5,0,2.667" FontSize="16"  Foreground="DarkSlateGray"/>
+                </Grid>
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1">
+                    <TextBlock Text="Email :"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="05,5,0,2.667" FontSize="12"  Foreground="DarkSlateGray" Height="18"/>
+                </Grid>
+                <Grid Grid.Row="2" Background="PowderBlue" BorderBrush="#3DBAF9" BorderThickness="1,1,1,1" CornerRadius="8,8,8,8">
+
+                    <TextBlock Text="{Binding CurrentUser.Email}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,5,0,2.667" FontSize="16"  Foreground="DarkSlateGray"/>
+                </Grid>
+
+            </Grid>
+        </Grid>
+
+
+    </Grid>
+</Page>
+

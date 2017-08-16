@@ -1,0 +1,112 @@
+﻿<Page
+    x:Class="SmartCityApp.Inscription"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SmartCityApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+    DataContext="{Binding Source={StaticResource Locator}, Path=Inscription}"
+    mc:Ignorable="d">
+
+
+    <Grid Background="SkyBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid Background="DarkSlateGray" Grid.Row="0" Height="Auto">
+            <Button Content="&#xE72B;" Margin="20" Background="DarkSlateGray" Foreground="SkyBlue" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontSize="30" FontWeight="ExtraBold" Command="{Binding BackToMain}"/>
+            <TextBlock Text="Welcome" Foreground="SkyBlue" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold"/>
+        </Grid>
+        <TextBlock Grid.Row="1" Text="Inscription" Foreground="DarkSlateGray" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="2" Text="__________________________" Foreground="DarkSlateGray" FontWeight="Bold" HorizontalAlignment="Center"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Prénom :" Margin="0,0,30,0" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" Foreground="DarkSlateGray"/>
+            <TextBox x:ConnectionId='9' Grid.Column="1" Text="{Binding FirstName, Mode=TwoWay}" Name="Prenom" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Width="140"/>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Nom :" Margin="0,0,30,0" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" Foreground="DarkSlateGray"/>
+            <TextBox x:ConnectionId='8' Grid.Column="1" Text="{Binding Name, Mode=TwoWay}" Name="Nom" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Width="140"/>
+        </Grid>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Pseudo :" Margin="0,0,30,0" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" Foreground="DarkSlateGray"/>
+            <TextBox x:ConnectionId='7' Grid.Column="1" Text="{Binding Pseudo, Mode=TwoWay}" Name="Pseudo" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Width="140"/>
+        </Grid>
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Mot De Passe :" Margin="0,0,30,0" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" Foreground="DarkSlateGray"/>
+            <PasswordBox x:ConnectionId='6' Grid.Column="1" Password="{Binding Pass, Mode=TwoWay}" Name="MotDePasse" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Width="140"/>
+        </Grid>
+        <Grid Grid.Row="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Confirmer mot de passe :" Margin="0,0,30,0" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" Foreground="DarkSlateGray"/>
+            <PasswordBox x:ConnectionId='5' Grid.Column="1" Password="{Binding PassConfirm, Mode=TwoWay}" Name="ConfirmMotDePasse" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Width="140"/>
+        </Grid>
+        <Grid Grid.Row="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Email :" Margin="0,0,30,0" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" Foreground="DarkSlateGray"/>
+            <TextBox x:ConnectionId='4' Grid.Column="1" Text="{Binding Email, Mode=TwoWay}" Name="Email" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Width="140"/>
+        </Grid>
+        <Grid Grid.Row="9">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Date de naissance :" Margin="0,0,30,0" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" Foreground="DarkSlateGray" />
+            <DatePicker x:ConnectionId='3' Grid.Column="1" x:Name="DatePicker"  HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Foreground="DarkSlateGray" Height="40" Date="{Binding DateForm, Mode=TwoWay }" Margin="0,0,0,0" Width="Auto">
+            </DatePicker>
+        </Grid>
+        <Grid Grid.Row="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Adresse :" Margin="0,0,30,0" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" Foreground="DarkSlateGray"/>
+            <TextBox x:ConnectionId='2' Grid.Column="1" Text="{Binding Address, Mode=TwoWay}"  Name="Adresse" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Width="140"/>
+        </Grid>
+        <Grid Grid.Row="11">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Téléphone :" Margin="0,0,30,0" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" Foreground="DarkSlateGray"/>
+            <TextBox x:ConnectionId='1' Grid.Column="1" Text="{Binding PhoneNumber, Mode=TwoWay}" Name="Telephone" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Width="140"/>
+        </Grid>
+        <Button Grid.Row="12" Background="Teal" Content="Valider" HorizontalAlignment="Center" Foreground="White" Width="105" Command="{Binding ToMenu}"/>
+    </Grid>
+
+</Page>
+
